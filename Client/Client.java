@@ -21,11 +21,11 @@ class Client {
 			System.out.println("please input the name of the file containing basic math operations");
 			String fileName = sc.nextLine();
 			File myFile = new File (fileName);
-			
+			long startTime = System.currentTimeMillis();
 			if(myFile.exists() && !myFile.isDirectory()){
 				//reading from file
 				Scanner fl = new Scanner(myFile);
-				long startTime = System.currentTimeMillis();
+				
 				//while (!"exit".equalsIgnoreCase(line)){
 				while(fl.hasNextLine()){
 					//read line from user
@@ -47,7 +47,7 @@ class Client {
 			long endTime = System.currentTimeMillis();
 			//close scanner object
 			sc.close();
-			System.out.println("Code executed in: " + endTime-startTime + " ms");
+			System.out.println("Code executed in: " + (endTime-startTime) + " ms");
 		}
 		catch (IOException e ){
 			e.printStackTrace();
