@@ -24,9 +24,8 @@ class Client {
 			
 			if(myFile.exists() && !myFile.isDirectory()){
 				//reading from file
-				
 				Scanner fl = new Scanner(myFile);
-
+				long startTime = System.currentTimeMillis();
 				//while (!"exit".equalsIgnoreCase(line)){
 				while(fl.hasNextLine()){
 					//read line from user
@@ -45,9 +44,10 @@ class Client {
 			else{
 				System.err.println("Error: File not found");
 			}
-			
+			long endTime = System.currentTimeMillis();
 			//close scanner object
 			sc.close();
+			System.out.println("Code executed in: " + endTime-startTime + " ms");
 		}
 		catch (IOException e ){
 			e.printStackTrace();
